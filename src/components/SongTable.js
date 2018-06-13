@@ -1,4 +1,5 @@
 import React from 'react'
+import SongRow from './SongRow'
 
 const SongTable = (props) => {
 
@@ -6,11 +7,7 @@ const SongTable = (props) => {
 
     const songs = props.songsData.map((song, index) => {
       return (
-        <tr key={index}>
-          <td>{index + 1}</td>
-          <td>{song['im:name']['label']}</td>
-          <td>{song['im:artist']['label']}</td>
-        </tr>
+        <SongRow key={index} index={index} title={song['im:name']['label']} artist={song['im:artist']['label']}/> 
       )
     })
 
